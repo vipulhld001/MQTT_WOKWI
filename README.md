@@ -32,7 +32,7 @@ An IoT edge application written in **MicroPython** for the **ESP32** microcontro
        +--------------------------------------------+
 
 ## ⚡ Hardware Wiring Configuration
-
+'''text 
 The code is pre-mapped to the following pins on your ESP32 board or your Wokwi simulation space:
 
 ### 1. Sensory Elements (Inputs)
@@ -75,3 +75,16 @@ If using hardware connected to the open internet, run:
 ```python
 import upip
 upip.install('micropython-umqtt.simple')
+
+
+3. Remote Controlling LEDs
+To toggle your onboard physical/virtual connections remotely via an external MQTT client terminal tool (like MQTTX or Mosquitto CLI):
+
+Turn on the Green LED:
+
+Bash
+mosquitto_pub -h test.mosquitto.org -t "vipul/green" -m "on"
+Turn off the Red LED:
+
+Bash
+mosquitto_pub -h test.mosquitto.org -t "vipul/red" -m "off"
