@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "WalkingCorpse",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -76.8, "left": -4.76, "attrs": {} },
+    { "type": "wokwi-ldr", "id": "ldr1", "top": -38.1, "left": -111, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 142.8,
+      "left": 294.6,
+      "rotate": 90,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 94.8,
+      "left": 300.4,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 167.45,
+      "left": 200.2,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 109.85,
+      "left": 229,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr2",
+      "top": -313.6,
+      "left": -306.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -382.5,
+      "left": 120.7,
+      "attrs": { "distance": "199" }
+    }
+  ],
+  "connections": [
+    [ "ldr1:VCC", "esp:3V3", "red", [ "h-5" ] ],
+    [ "ldr1:GND", "esp:GND.2", "black", [ "h-5" ] ],
+    [ "ldr1:OUT", "esp:32", "green", [ "h-5" ] ],
+    [ "led1:A", "esp:23", "blue", [ "h-153.6", "v-124.4" ] ],
+    [ "led1:C", "r1:1", "black", [ "h-5" ] ],
+    [ "r1:2", "esp:GND.2", "black", [ "h-66.85", "v-202.15" ] ],
+    [ "led2:A", "esp:22", "blue", [ "h-149.8", "v-76.8" ] ],
+    [ "led2:C", "r2:1", "black", [ "h-5" ] ],
+    [ "r2:2", "esp:GND.2", "black", [ "h-37.2", "v-86.4" ] ],
+    [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v57.6", "h-230.4", "v211.2" ] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v249.6", "h-159.64" ] ],
+    [ "ldr2:VCC", "esp:3V3", "red", [ "h19.2", "v211.2" ] ],
+    [ "ldr2:GND", "esp:GND.2", "black", [ "h124.8", "v201.2" ] ],
+    [ "ldr2:AO", "esp:35", "green", [ "v37.7", "h-9.6", "v192" ] ],
+    [ "ultrasonic1:ECHO", "esp:18", "magenta", [ "v163.2", "h-10.4", "v134.4" ] ],
+    [ "ultrasonic1:TRIG", "esp:5", "green", [ "v124.8", "h-67.6", "v230.4" ] ]
+  ],
+  "dependencies": {}
+}
