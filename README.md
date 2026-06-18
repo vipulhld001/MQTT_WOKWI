@@ -3,9 +3,11 @@ Connecting MQTT with ESP32 (Based on Mosquitto Broker)
 # MicroPython Smart Sensor Node with MQTT Control (ESP32)
 
 An IoT edge application written in **MicroPython** for the **ESP32** microcontroller. This project implements a bidirectional telemetry system using the **MQTT** protocol. It reads environmental values from a Photoresistor (LDR) and an Ultrasonic Sensor (HC-SR04), publishes JSON telemetry to a broker, and acts on incoming subscription messages to toggle remote LEDs.
+## Sketch Diagram
 
+![Circuit Diagram](Sketch.png)
 
-## 📊 System Architecture
+## System Architecture
 
 ```
        +--------------------------------------------+
@@ -32,7 +34,7 @@ An IoT edge application written in **MicroPython** for the **ESP32** microcontro
 ```
 
 
-## ⚡ Hardware Wiring Configuration
+##  Hardware Wiring Configuration
 
 The code is pre-mapped to the following pins on your ESP32 board or your Wokwi simulation space:
 
@@ -51,7 +53,7 @@ The code is pre-mapped to the following pins on your ESP32 board or your Wokwi s
 
 ---
 
-## 📡 Protocol & Broker Details
+##  Protocol & Broker Details
 
 - **MQTT Broker Host:** `test.mosquitto.org`
 - **Default Port:** `1883` (Unencrypted)
@@ -64,13 +66,13 @@ The code is pre-mapped to the following pins on your ESP32 board or your Wokwi s
 | **`vipul/red`** | **Subscribe**| `String` | Acceptable values: `"on"` or `"off"` to drive the Red LED state. |
 | **`vipul/green`**| **Subscribe**| `String` | Acceptable values: `"on"` or `"off"` to drive the Green LED state. |
 
-## 🛠️ Software Requirements
+##  Software Requirements
 
 To successfully run this script on an embedded or virtual target:
 * Ensure your target board is running a valid version of **MicroPython v1.19+**.
 * The core framework depends on the standard `umqtt.simple` package.
 
-If using hardware connected to the open internet, run:
+If using hardware connected to the open internet, run: (No need to do this for Wokwi)
 ```python
 import upip
 upip.install('micropython-umqtt.simple')
