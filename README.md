@@ -32,7 +32,7 @@ An IoT edge application written in **MicroPython** for the **ESP32** microcontro
        +--------------------------------------------+
 
 ## ⚡ Hardware Wiring Configuration
-'''text 
+
 The code is pre-mapped to the following pins on your ESP32 board or your Wokwi simulation space:
 
 ### 1. Sensory Elements (Inputs)
@@ -62,8 +62,6 @@ The code is pre-mapped to the following pins on your ESP32 board or your Wokwi s
 | **`vipul/sensors`** | **Publish** | `JSON` | Pushes object carrying `ldr`, `proximity_cm`, and `timestamp` every 3 seconds. |
 | **`vipul/red`** | **Subscribe**| `String` | Acceptable values: `"on"` or `"off"` to drive the Red LED state. |
 | **`vipul/green`**| **Subscribe**| `String` | Acceptable values: `"on"` or `"off"` to drive the Green LED state. |
-
----
 
 ## 🛠️ Software Requirements
 
