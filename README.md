@@ -31,8 +31,9 @@ An IoT edge application written in **MicroPython** for the **ESP32** microcontro
        |         (test.mosquitto.org)               |
        +--------------------------------------------+
 
+---
 ## ⚡ Hardware Wiring Configuration
-
+```text
 The code is pre-mapped to the following pins on your ESP32 board or your Wokwi simulation space:
 
 ### 1. Sensory Elements (Inputs)
