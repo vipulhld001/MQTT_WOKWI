@@ -77,8 +77,13 @@ If using hardware connected to the open internet, run: (No need to do this for W
 import upip
 upip.install('micropython-umqtt.simple')
 ```
-
-### Remote Controlling LEDs
+---
+## Mosquitto Sub (to see all sensor data)
+```
+mosquitto_sub -h test.mosquitto.org -t vipul/sensors
+```
+---
+### Mosquitto Pub (Remote Controlling LEDs)
 To toggle your onboard physical/virtual connections remotely via an external MQTT client terminal tool (like MQTTX or Mosquitto CLI):
 
 Turn on the Green LED:
@@ -98,3 +103,4 @@ Turn off the Green LED:
 ```cmd
 mosquitto_pub -h test.mosquitto.org -t "vipul/red" -m "off"
 ```
+
