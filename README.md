@@ -99,7 +99,7 @@ Turn on the Red LED:
 ```cmd
 mosquitto_pub -h test.mosquitto.org -t "vipul/red" -m "on"
 ```
-Turn off the Green LED:
+Turn off the Red LED:
 ```cmd
 mosquitto_pub -h test.mosquitto.org -t "vipul/red" -m "off"
 ```
